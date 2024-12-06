@@ -38,9 +38,9 @@ class InputfieldSmallSelectMultiple extends InputfieldSelectMultiple implements 
 	 */
 	protected function getDefaults(): array {
 		return [
-			'iconPair' => '◉ ◯', 
-			'onIcon' => '✅',
-			'offIcon' => '',
+			'iconPair' => '✔ —', 
+			'onIcon' => '✔',
+			'offIcon' => '—',
 			'labelType' => 'qty', // qty or value
 			'qtyLabel' => '{n} selected',
 			'emptyLabel' => '',
