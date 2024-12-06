@@ -9,7 +9,7 @@ that didn't introduce new UI elements, sticking just to native browser controls.
 It works the same as a regular single `<select>`in how you make a selection. Selected items are indicated
 by a check or radio button (or something else if you configure it). Clicking a selected item de-selects it.
 
-## More details
+### More details
 
 - It provides multiple selection while taking up no more space than a regular single select. 
  
@@ -33,13 +33,13 @@ by a check or radio button (or something else if you configure it). Clicking a s
 - The most common use cases would be with ProcessWire SelectOptions and Page fields. It can also
   be used with FormBuilder or any other InputfieldForms. It can also be used outside of ProcessWire forms.
 
-## Installation 
+### Installation 
 
 1. Copy all the files for this module into /site/modules/InputfieldSmallSelectMultiple/.
 2. In your admin go to Modules > Refresh. 
 3. Find this module on your Modules “Site” tab and click “Install”.
 
-### Usage in fields:
+### Usage in fields
 
 - **Options fields:**  
 Create a new field using the “Select Options” and select “Small Select Multiple”
@@ -54,17 +54,17 @@ your InputfieldPage module settings and add “Small Select Multiple” as an al
 You should see the option to use “Small Select Multiple” anywhere that you see ProcessWire’s 
 other multiple selection types available. 
 
-## Configuration notes
+### Configuration notes
 
 If the users are more mobile-based, test the different icon options to see which works best.
 I've found that on mobile devices (in Android at least), the strong check mark icons are more clear, 
 because the browser native widget already has radio-button looking items for each option. Whereas on 
 desktop I think the radio button icon options look a little cleaner.
 
-If userse will be potentially selecting a lot of items, I recommend sticking to the "Quantity of 
+If users will be potentially selecting a lot of items, I recommend sticking to the "Quantity of 
 selected items" label type, as it doesn't consume more horizontal space as more options are selected.
 
-## Screenshots
+### Screenshots
 
 Closed state, indicating selected options:
 
