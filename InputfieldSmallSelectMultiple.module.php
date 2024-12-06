@@ -67,6 +67,7 @@ class InputfieldSmallSelectMultiple extends InputfieldSelectMultiple implements 
 			if(strpos($iconPair, ' ') === false) $iconPair .= ' ';
 			list($settings['onIcon'], $settings['offIcon']) = explode(' ', $iconPair);
 		}
+		if($settings['onIcon'] === $settings['offIcon']) $settings['offIcon'] = ' ';
 		$this->onIcon = $settings['onIcon'];
 		$this->offIcon = $settings['offIcon'];
 		

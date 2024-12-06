@@ -54,6 +54,16 @@ your InputfieldPage module settings and add “Small Select Multiple” as an al
 You should see the option to use “Small Select Multiple” anywhere that you see ProcessWire’s 
 other multiple selection types available. 
 
+## Configuration notes
+
+If the users are more mobile-based, test the different icon options to see which works best.
+I've found that on mobile devices (in Android at least), the strong check mark icons are more clear, 
+because the browser native widget already has radio-button looking items for each option. Whereas on 
+desktop I think the radio button icon options look a little cleaner.
+
+If userse will be potentially selecting a lot of items, I recommend sticking to the "Quantity of 
+selected items" label type, as it doesn't consume more horizontal space as more options are selected.
+
 ## Screenshots
 
 Closed state, indicating selected options:

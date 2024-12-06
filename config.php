@@ -19,7 +19,7 @@ function InputfieldSmallSelectMultipleConfig(InputfieldWrapper $inputfields, Inp
 		'▶ ▷',
 		'✓ —',
 		'✔ —',
-		'✅ ',
+		'✅ —',
 		'custom', 
 	];
 	
