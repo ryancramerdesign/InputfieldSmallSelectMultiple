@@ -6,8 +6,13 @@ single `<select>`. It is simpler and easier to use than a normal select multiple
 The goal was to have a multi-selection input that was as simple as single-selection input, and
 that didn't introduce new UI elements, sticking just to native browser controls. 
 
-It works the same as a regular single `<select>`in how you make a selection. Selected items are indicated
+It works the same as a regular single `<select>` in how you make a selection. Selected items are indicated
 by a check or radio button (or something else if you configure it). Clicking a selected item de-selects it.
+
+### Requirements
+
+- ProcessWire 3.0.229 or newer
+- PHP 7.1 or newer
 
 ### More details
 
@@ -19,14 +24,13 @@ by a check or radio button (or something else if you configure it). Clicking a s
 - Has a simpler presentation than other multiple selection options, making it ideal for large 
   forms with lots of inputs that might otherwise look complex. 
  
-- Also good for cases where vertical space may be limited. 
 - Unlike AsmSelect (our other custom multi-selection widget) the input does not grow vertically 
   as additional options are selected, making it good for cases where vertical space may be limited.
  
 - The label for the select can either indicate the quantity of items selected, or it can present
   a CSV list of selected items. 
  
-- Provices the ability to select-all or deselect-all.
+- Provides the ability to select-all or deselect-all.
 
 - This module extends InputfieldSelectMultiple and can be substituted anywhere that module is used.
  
@@ -57,9 +61,8 @@ other multiple selection types available.
 ### Configuration notes
 
 If the users are more mobile-based, test the different icon options to see which works best.
-I've found that on mobile devices (in Android at least), the strong check mark icons are more clear, 
-because the browser native widget already has radio-button looking items for each option. Whereas on 
-desktop I think the radio button icon options look a little cleaner.
+I've found that on mobile devices (in Android at least), the strong check mark icons are the clearest, 
+because the browser native widget already has radio-button looking items for each option. 
 
 If users will be potentially selecting a lot of items, I recommend sticking to the "Quantity of 
 selected items" label type, as it doesn't consume more horizontal space as more options are selected.
@@ -77,6 +80,10 @@ Closed state, indicating quantity of items selected:
 Opened state to make selection (actual appearance will depend on browser and platform):
 
 ![Open state](screenshots/open.png)
+
+Another example of the opened state, using different settings:
+
+![Open state](screenshots/open2.png)
 
 Settings screen:
 
