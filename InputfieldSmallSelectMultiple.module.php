@@ -42,7 +42,7 @@ class InputfieldSmallSelectMultiple extends InputfieldSelectMultiple implements 
 			'onIcon' => '✔',
 			'offIcon' => '—',
 			'labelType' => 'qty', // qty or value
-			'qtyLabel' => '{n} selected',
+			'qtyLabel' => '{qty} selected',
 			'emptyLabel' => '',
 			'separator' => ',_',
 			'debug' => 0,
@@ -176,7 +176,16 @@ class InputfieldSmallSelectMultiple extends InputfieldSelectMultiple implements 
 			}
 			$label = implode($settings['separator'], $selected); 
 		} else if($numSelected) {
-			$label = str_replace('{n}', $numSelected, $this->qtyLabel);
+			$numTotal = 0;
+			foreach($options as $optionValue => $optionLabel) {
+				if($optionValue === '') continue;
+				$numTotal += is_array($optionLabel) ? count($optionLabel) : 1;
+			}
+			$label = str_replace(
+				[ '{n}', '{qty}', '{total}' ], 
+				[ $numSelected, $numSelected, $numTotal ], 
+				$this->qtyLabel
+			);
 		} else {
 			$label = $this->emptyLabel;
 		}

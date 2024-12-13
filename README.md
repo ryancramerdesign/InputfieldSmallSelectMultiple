@@ -37,6 +37,8 @@ by a check or radio button (or something else if you configure it). Clicking a s
 - The most common use cases would be with ProcessWire SelectOptions and Page fields. It can also
   be used with FormBuilder or any other InputfieldForms. It can also be used outside of ProcessWire forms.
 
+- Optgroups are supported in the same way that they are in InputfieldSelect. 
+
 ### Installation 
 
 1. Copy all the files for this module into /site/modules/InputfieldSmallSelectMultiple/.

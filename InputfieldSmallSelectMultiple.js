@@ -11,7 +11,7 @@ function InputfieldSmallSelectMultiple() {
 		offIcon: '',
 		debug: false,
 		labelType: 'qty',
-		qtyLabel: '{n} selected',
+		qtyLabel: '{qty} selected',
 		emptyLabel: '',
 		separator: ', ', 
 	};
@@ -22,9 +22,10 @@ function InputfieldSmallSelectMultiple() {
  	 */	
 	function updateSelectLabel($select1) {
 		var $select2 = $select1.next('select');
-		var $option1 = $select1.children('option[value=""]');
-		var $selected = $select2.children('option:selected');
+		var $option1 = $select1.find('option[value=""]');
+		var $selected = $select2.find('option:selected');
 		var numSelected = $selected.length;
+		var numTotal = $select1.find('option[value!=""]').length;
 		var settings = $select1.data('settings');
 		
 		if(settings.labelType === 'value') {
@@ -36,7 +37,8 @@ function InputfieldSmallSelectMultiple() {
 			$option1.text(stringValue);
 			
 		} else if(numSelected) {
-			$option1.text(settings.qtyLabel.replace('{n}', numSelected)); 
+			var label = settings.qtyLabel.replace('{qty}', numSelected).replace('{total}', numTotal);
+			$option1.text(label);
 			
 		} else {
 			$option1.text(settings.emptyLabel);
@@ -79,7 +81,7 @@ function InputfieldSmallSelectMultiple() {
 			addIcon = settings.onIcon;
 			setOptionSelected($option, true);
 		} else {
-			if(optionLabel.indexOf(settings.offIcon) === 0) return; // already has it
+			if(settings.offIcon.length && optionLabel.indexOf(settings.offIcon) === 0) return; // already has it
 			if(optionLabel.indexOf(settings.onIcon) === 0) removeIcon = settings.onIcon;
 			addIcon = settings.offIcon;
 			setOptionSelected($option, false);
@@ -114,7 +116,7 @@ function InputfieldSmallSelectMultiple() {
 				setOptionSelected($option, false);
 				qty++;
 			}
-			if($select === null) $select = $option.parent();
+			if($select === null) $select = $option.closest('select');
 		}); 
 		
 		if(qty) $select.trigger('change');
@@ -133,7 +135,7 @@ function InputfieldSmallSelectMultiple() {
 		var $optionSelect2 = false;
 		var wasSelected = false;
 		var applyAll = value === '++' || value === '--';
-		var $options = $select2.children('option');
+		var $options = $select2.find('option');
 		var settings = $select1.data('settings');
 		
 		if(applyAll) {
@@ -157,7 +159,7 @@ function InputfieldSmallSelectMultiple() {
 			}
 		});
 		
-		$select1.children('option').each(function() {
+		$select1.find('option').each(function() {
 			var $option = $(this);
 			if($option.val() !== value) return;
 			if(wasSelected) {
@@ -190,7 +192,7 @@ function InputfieldSmallSelectMultiple() {
 		var $select1 = $select2.prev('select');
 		var values = $select2.val();
 		if(!values) values = [];
-		$select1.children('option').each(function() {
+		$select1.find('option').each(function() {
 			var $option = $(this);
 			var optionValue = $option.attr('value');
 			if(!optionValue) return;

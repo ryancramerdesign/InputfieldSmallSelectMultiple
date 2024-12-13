@@ -67,8 +67,11 @@ function InputfieldSmallSelectMultipleConfig(InputfieldWrapper $inputfields, Inp
 	$f->attr('name', 'qtyLabel');
 	$f->label = __('Quantity label to use');
 	$f->val($module->qtyLabel);
-	$f->notes = __('The placeholder text `{n}` is automatically replaced by number of selected options.');
-	$f->showIf = 'labelType=qty';
+	$f->notes = 
+		__('The placeholder text `{qty}` is automatically replaced by number of selected options.') . ' ' .
+		__('The placeholder text `{total}` is automatically replaced by the total number of selectable options.') . ' ' . 
+		__('Examples: `{qty} selected` or `{qty} of {total} selected`.'); 
+		$f->showIf = 'labelType=qty';
 	$inputfields->add($f);
 
 	$f = $inputfields->InputfieldText;
